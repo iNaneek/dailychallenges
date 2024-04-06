@@ -13,3 +13,6 @@ stepOptions = (1, 2)
 stairs = 5
 #stairs = getStairCount()
 largestCount = math.ceil(stairs/min(stepOptions))
+
+def loops():
+    pass
