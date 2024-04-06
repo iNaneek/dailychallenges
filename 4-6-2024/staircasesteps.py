@@ -18,31 +18,37 @@ Problem : dailycodingproblem.com example problem
 
 '''
 
+import time
 import math
 
+t1 = time.time()
+
 stepOptions = (1, 2, 3)  # input for all stair options
-stairs = 10  # input for total stairs
+stairs = 18  # input for total stairs
 
 largestCount = math.ceil(stairs/min(stepOptions))  # largest set of additions is always the smallest step diveded by the stair count
 solutionsCounter = 0  # counter of solutions
 
 solutionCanadits = []
-def findAllOptions(wantedLength, stepOptions, currentVal = 0):
+def findAllOptions(stepOptions, currentVal = 0):
     global solutionsCounter
 
-    if wantedLength == 0:
+    if currentVal >= stairs:
         return None
 
     for i in stepOptions:
         solutionCanadits.append(currentVal + i)
         if currentVal + i == stairs:
             solutionsCounter += 1
-        findAllOptions(wantedLength - 1, stepOptions, currentVal + i)
+        findAllOptions(stepOptions, currentVal + i)
 
-findAllOptions(largestCount, stepOptions)
+findAllOptions(stepOptions)
 print(solutionCanadits)
 print(len(solutionCanadits))
 
 print(solutionsCounter)
 
-
+t2 = time.time()
+print(str(t2-t1))
+#91.60307788848877
+#0.028007030487060547
