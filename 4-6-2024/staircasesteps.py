@@ -14,7 +14,7 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 '''
 Created: 4/6/2024
-Problem : dailycodingproblem.com example problem
+Problem : dailycodingproblem.com
 
 '''
 
